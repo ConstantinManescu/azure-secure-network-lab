@@ -1,0 +1,1 @@
+Bicep Infrastructure as Code files will be added after the portal and Azure CLI implementation is validated.

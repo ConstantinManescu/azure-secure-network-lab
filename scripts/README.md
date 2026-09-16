@@ -1,0 +1,1 @@
+Azure Portal validation screenshots will be stored here. Sensitive information will be redacted.

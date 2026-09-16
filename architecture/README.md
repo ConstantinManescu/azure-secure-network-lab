@@ -1,0 +1,1 @@
+Architecture diagrams will be added as the lab evolves.

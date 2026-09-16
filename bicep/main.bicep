@@ -61,36 +61,47 @@ resource vnet 'Microsoft.Network/virtualNetworks@2024-05-01' = {
   location: location
   tags: tags
   properties: {
-    addressSpace: {
+     addressSpace: {
       addressPrefixes: [
         '10.10.0.0/16'
       ]
     }
+    encryption: {
+      enabled: false
+      enforcement: 'AllowUnencrypted'
+    }
+    privateEndpointVNetPolicies: 'Disabled'
     subnets: [
       {
-        name: 'snet-management'
+        name: 'snet-backend'
         properties: {
-          addressPrefix: '10.10.1.0/24'
+          addressPrefixes: [
+            '10.10.3.0/24'
+          ]
           networkSecurityGroup: {
-            id: nsgManagement.id
+            id: nsgBackend.id
           }
         }
       }
       {
         name: 'snet-frontend'
         properties: {
-          addressPrefix: '10.10.2.0/24'
+          addressPrefixes: [
+            '10.10.2.0/24'
+          ]
           networkSecurityGroup: {
             id: nsgFrontend.id
           }
         }
       }
       {
-        name: 'snet-backend'
+        name: 'snet-management'
         properties: {
-          addressPrefix: '10.10.3.0/24'
+          addressPrefixes: [
+            '10.10.1.0/24'
+         ]
           networkSecurityGroup: {
-            id: nsgBackend.id
+            id: nsgManagement.id
           }
         }
       }

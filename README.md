@@ -1,56 +1,37 @@
 # Azure Secure Network Infrastructure Lab
 
-A cost-conscious, hands-on Azure AZ-104 portfolio project focused on secure networking, governance, identity, monitoring, and Infrastructure as Code.
+Hands-on Azure project I am building while preparing for AZ-104.
 
-## Project goal
+I have a networking and VoIP background, and I use this project to apply familiar concepts—network segmentation, access control, routing and troubleshooting—in Azure.
 
-Build a secure and reproducible Azure environment incrementally, document each decision, validate the configuration, and remove Azure resources after testing to control costs.
+## Current stage
 
-This project is designed to demonstrate practical Azure Administrator skills and networking knowledge.
+The initial network has been built manually in Azure and captured in Bicep.
 
-## Planned technologies
+Completed:
 
-- Azure Resource Groups, tags, and Cost Management
-- Azure Virtual Networks, subnets, and Network Security Groups
-- Linux virtual machines
+- Resource Group with Project, Environment and Owner tags;
+- Virtual Network: `10.10.0.0/16`;
+- Management, frontend and backend subnets;
+- Network Security Groups associated with each subnet;
+- HTTP access allowed to the frontend subnet;
+- TCP 8080 access to the backend subnet only from the frontend subnet;
+- Local Bicep validation with Azure CLI.
+
+## Working approach
+
+I build each part in the Azure Portal first, validate it, document the result, then reproduce it with Azure CLI and Bicep.
+
+To control costs, Azure resources are created only for lab sessions and deleted afterwards.
+
+> Deploy → Test → Document → Destroy
+
+## Planned areas
+
+- Azure networking and NSGs
+- Virtual machines and secure administration
 - VNet peering
-- Azure Storage and Private Endpoints
-- Microsoft Entra ID and Azure RBAC
-- Azure Monitor, Log Analytics, and alerts
-- Azure CLI
-- Bicep
-- GitHub Actions
-
-## Cost safety policy
-
-This project follows a strict cost-control workflow:
-
-> Deploy → Learn / Test → Capture evidence → Destroy
-
-No virtual machines, public IP addresses, Bastion hosts, or other billable resources will be left running after a lab session.
-
-Azure infrastructure will be deployed into a dedicated Resource Group and deleted when the session is complete. Source code, documentation, architecture diagrams, and screenshots remain available in this repository.
-
-## Project status
-
-| Lab | Scope | Status |
-|---|---|---|
-| Lab 0 | Cost safety and GitHub repository | In progress |
-| Lab 1 | Resource Group, tags, and governance | Planned |
-| Lab 2 | VNet, subnets, and NSGs | Planned |
-| Lab 3 | Linux VM and secure administration | Planned |
-| Lab 4 | VNet peering | Planned |
-| Lab 5 | Storage and Private Endpoint | Planned |
-| Lab 6 | Entra ID and RBAC | Planned |
-| Lab 7 | Monitoring and alerts | Planned |
-| Lab 8 | Azure CLI, Bicep, and GitHub Actions | Planned |
-
-## Repository structure
-
-```text
-azure-secure-network-lab/
-├── architecture/       # Architecture diagrams
-├── bicep/              # Infrastructure as Code
-├── docs/               # Lab notes and decisions
-├── scripts/            # Deployment and cleanup scripts
-└── screenshots/        # Azure Portal validation evidence
+- Storage and Private Endpoints
+- Microsoft Entra ID and RBAC
+- Azure Monitor
+- Azure CLI and Bicep

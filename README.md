@@ -19,7 +19,7 @@ Completed:
 - Temporary Ubuntu frontend VM deployed with HTTP validated from the Internet;
 - Private Ubuntu backend VM deployed without a public IP address;
 - Frontend-to-backend connectivity validated on TCP port 8080;
-- Bicep compiled locally and reviewed with Azure CLI What-If;
+- Bicep compiled locally, reviewed with Azure CLI What-If, deployed successfully and functionally validated;
 - Temporary compute resources deleted after validation to control costs.
 
 ## Working approach

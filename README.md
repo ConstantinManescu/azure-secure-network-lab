@@ -6,7 +6,7 @@ I have a networking and VoIP background, and I use this project to apply familia
 
 ## Current stage
 
-The initial network has been built manually in Azure and captured in Bicep.
+The initial network and compute validation were built manually in Azure and then captured in Bicep.
 
 Completed:
 
@@ -16,7 +16,11 @@ Completed:
 - Network Security Groups associated with each subnet;
 - HTTP access allowed to the frontend subnet;
 - TCP 8080 access to the backend subnet only from the frontend subnet;
-- Local Bicep validation with Azure CLI.
+- Temporary Ubuntu frontend VM deployed with HTTP validated from the Internet;
+- Private Ubuntu backend VM deployed without a public IP address;
+- Frontend-to-backend connectivity validated on TCP port 8080;
+- Bicep compiled locally and reviewed with Azure CLI What-If;
+- Temporary compute resources deleted after validation to control costs.
 
 ## Working approach
 
